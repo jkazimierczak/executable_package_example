@@ -7,7 +7,7 @@ long_description = (here / "README.md").read_text(encoding="utf-8")
 setup(
     name="example_package",
     version="0.0.1",
-    packages=find_packages(where="src"),  # Required
+    packages=find_packages(),  # Required
 
     # Although license is not necessary, it's good to add one
     # Don't forget to include the license in MANIFEST.in
@@ -22,7 +22,7 @@ setup(
 
     # When your source code is in a subdirectory under the project root, e.g.
     # `src/`, it is necessary to specify the `package_dir` argument.
-    package_dir={"": "src"},  # Optional
+    # package_dir={"": "src"},  # Optional
 
     # If there are data files included in your packages that need to be
     # installed, specify them here.
