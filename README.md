@@ -18,11 +18,10 @@ packaging_example
 │   Pipfile.lock
 │   README.md
 │
-└───src
-    └───my_pkg
-        │   config.yml
-        │   __init__.py
-        │   __main__.py
+└───my_pkg
+    │   config.yml
+    │   __init__.py
+    │   __main__.py
 ```
 > A `Pipfile` and it's `.lock` files are present as I'm using pipenv 
 > for managing dependencies. A standard equivalent of it is a 
