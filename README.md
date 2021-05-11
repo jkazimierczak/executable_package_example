@@ -24,6 +24,11 @@ packaging_example
         │   __init__.py
         │   __main__.py
 ```
+> This project is located in /src subdirectory. If you want to see
+> an example where my_pkg is located directly in the project root,
+> take a look at `no_src_dir` branch. The only difference is in 
+> `setup.py` and it's very minimal compared to below instructions.
+
 > A `Pipfile` and it's `.lock` files are present as I'm using pipenv 
 > for managing dependencies. A standard equivalent of it is a 
 > `requirements.txt`. These files are not necessary for creating an
