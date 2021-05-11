@@ -86,7 +86,10 @@ Let's explain this line by line:
    or `Pipfile`.
 4. `entry_points` - it's used to specify executable scripts, that will
    be available for end user after installation. Basically - it's an 
-   entry point to our program.
+   entry point to our program. 
+   
+> `entrypoints` command names can be different from `name`. In my 
+> opinion though, it can lead to unnecessary confusion.
    
 ### Add short and long description
 It would be nice if someone knew what our program does by reading it's
@@ -131,4 +134,28 @@ def main():
 The latter won't work and will result in `FileNotFoundError`:
 ```
 FileNotFoundError: [Errno 2] No such file or directory: 'src/my_pkg/config.yml'
+```
+
+# How to install
+After taking necessary steps, you can finally install your package.
+As it's an executable package with its own dependency (`pyyaml`), to
+avoid possible conflicts, I will use `pipx` for installation.
+```bash
+# Install directly from project directory root
+pipx install .
+
+# Install From GitHub repository
+pipx install git+https://github.com/jakubkazimierczak/executable_package_example.git
+```
+After the installation of my example, you will be able to run the
+script from your console by issuing `example_package` command (that's
+the name we used in `setup.py` in `entry_points`).
+```bash
+$ example_package
+{'spam': 'eggs'}
+```
+## How to uninstall
+To uninstall a package, we refer to the `name` specified in `setup.py`:
+```bash
+pipx uninstall example_package
 ```
